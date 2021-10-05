@@ -29,7 +29,7 @@ public class LearnTestNG {
 	 // String browser = "chrome";             *in selunium we can't run both browsers so we use  =>if(){}else if(){}
 	 //String browser = "Firefox"; 
 	  String browser = null;
-	 
+	// String = url = null;
 	
 	  @BeforeSuite public void beforeSuite() {
 	  System.out.println("I AM BEFORE SUITE"); }
@@ -39,14 +39,16 @@ public class LearnTestNG {
 	  
 	  @BeforeClass public void readconfig() {
 	  
-	  Properties prop = new Properties(); //FileReader //InputStream
+	  Properties prop = new Properties(); 
+	  //FileReader //InputStream
 	  //BufferedReader //Scanner =>this four classes can read any type of file
 	  
-	  try { InputStream input = new
-	  FileInputStream("src\\main\\java\\config\\config.properties");
-	  prop.load(input); browser = prop.getProperty("browser");
+	  try { InputStream input = new FileInputStream("src\\main\\java\\config\\config.properties");
+	  prop.load(input); 
+	  browser = prop.getProperty("browser");
 	  System.out.println("Used Browser: "+ browser);
-	  
+	 // url = prop.getProperty("url");
+	 // System.out.println("Used environment: " + url);
 	  }catch(IOException e) { e.printStackTrace(); }
 	  
 	  
